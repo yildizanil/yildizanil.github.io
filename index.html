@@ -58,16 +58,23 @@
 
 <BODY>
 <style>
-img {
-  opacity: 0.2;
+div.content-details {
+  opacity: 0.5;
 }
-
-  img:hover {
+div.content-details:hover {
   opacity: 1.0;
 }
-div.list{
-  height: 600px;
-  width: auto;}
+.col-1 {width: 33%;}
+.col-2 {width: 33%;}
+.col-3 {width: 33%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+  
 </style>
 	<!-- Start top-category-widget Area -->
 			<section class="top-category-widget-area pt-90 pb-90 ">
@@ -78,11 +85,9 @@ div.list{
 								<div class="content relative">
 									<div class="overlay overlay-bg"></div>
 								    <a href="https://www.icevirtuallibrary.com/doi/abs/10.1680/jgele.20.00055">
-								      <div class="thumb">
-								  		 <img class="content-image img-fluid d-block mx-auto" src="https://www.icevirtuallibrary.com/na101/home/literatum/publisher/icep/journals/covergifs/jgele/cover.jpg" style="width:200px">
-								  	  </div>
+								      <div class="thumb"></div>
 								      <div class="content-details">
-								        <h4 class="content-title mx-auto text-uppercase">Latest publication</h4>
+								        <h4 class="content-title mx-auto text-uppercase"><FONT color="#000000">Latest publication</FONT></h4>
 								        <span></span>								
 								        <p><b>Estimating the full range of thermal conductivity dryout curve</b></p>
 								      </div>
@@ -95,12 +100,9 @@ div.list{
 								<div class="content relative">
 									<div class="overlay overlay-bg"></div>
 								    <a href="blog1.html">
-								      <div class="thumb">
-								  		 <img src="https://github.com/yildizanil/BlogScripts/blob/master/blog1/blog1_fig1.png?raw=true"
-alt="OCC">
-								  	  </div>
+								      <div class="thumb"></div>
 								      <div class="content-details">
-								        <h4 class="content-title mx-auto text-uppercase">Latest blog</h4>
+								        <h4 class="content-title mx-auto text-uppercase"><FONT color="#000000">Latest blog</FONT></h4>
 								        <span></span>								
 								        <p><b>Calculating monthly, daily, and hourly means of time series data</b></p>
 								      </div>
@@ -113,11 +115,9 @@ alt="OCC">
 								<div class="content relative">
 									<div class="overlay overlay-bg"></div>
 								    <a href="https://anilyildiz.shinyapps.io/occ-r/" >
-								      <div class="thumb">
-								  		 <img class="content-image img-fluid d-block mx-auto" src="https://github.com/yildizanil/yildizanil.github.io/blob/master/occ.png?raw=true" alt="">
-								  	  </div>
+								      <div class="thumb"></div>
 								      <div class="content-details">
-								        <h4 class="content-title mx-auto text-uppercase">Latest application</h4>
+								        <h4 class="content-title mx-auto text-uppercase"><FONT color="#000000">Latest application</FONT></h4>
 								        <span></span>
 								        <p><b>Interactive visualisation of Original Cam Clay model</b></p>
 								      </div>
