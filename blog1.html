@@ -58,22 +58,42 @@
 
 <BODY>
 <style>
-img {
-  opacity: 0.2;
-}
-  img:hover {
-  opacity: 1.0;
-}
 div.list{
   height: 500px;
   width: auto;}
 </style>
-<div  style="text-align:left;margin-top:50px;margin-left:30px;overflow:auto" class="list" >
+<div  style="text-align:left;margin-top:50px;padding: 10px 10px 10px 10px;overflow:auto" class="list" >
 <H6>2020-07-12</H6>
 <h6 style="  padding: 5px 5px 5px 0px;"> Calculating monthly, daily, and hourly means of time series data</h6>
-<p align="justify" style="overflow:auto;margin-left:50px"">
-When I started using large streams of time series data, one of the first challenges I had was calculating temporal average values of data in an efficient way.
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+When I started using large streams of time series data, one of the first challenges I had was calculating temporal average values of data in an efficient way. If you are measuring any of the phenomena in the soil-plant-atmosphere interaction, e.g. air temperature, soil temperature, net radiation, you will need to summarise your data as hourly, daily, or monthly averages.</p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+I will use air temperature data from one of the lysimeter setups at the <a href="https://twitter.com/ngif_uk">National Green Infrastructure Facility</a> that I instrumented within the research project Priming Laboratory EXperiments on infrastructure and Urban Systems (<a href="https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/R013535/1">PLEXUS</a>) to calculate hourly and daily means. If you are interested in watching how the setup was commissioned, please <a href="https://www.youtube.com/watch?v=e4RBqE6g_Jg&t">click here</a>. Data used in this script can be accessed via <a href="https://api.ngif.urbanobservatory.ac.uk/">NGIF API</a>.</p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+Firstly, we generate a time step vector using <em>seq()</em> function with time data formatted as POSIXct:
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+time_steps <- seq(tail(as.POSIXct(airtemp_raw[,1],tz="UTC"),1),as.POSIXct(airtemp_raw[1,1],tz="UTC"),60*60)</code></p></div>
+
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+Then, we use <em>findInterval()</em> function to obtain which time step each measurement belongs to:
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+which_step <- findInterval(as.POSIXct(airtemp_raw[,1],tz="UTC"),time_steps)</code></p></div>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+Last step is to use the <em>aggregate()</em> function to calculate the mean values:
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+airtemp_1h <- aggregate(airtemp_raw[,2],list(time_steps[which_step]),mean)</code></p></div>
+
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+This piece of code gives us the 1-hourly means of data frame that we imported. Same method can be applied to other <em>n</em>-hourly means by varying the time steps using the <em>(60*60) </em>argument. Fig. 1 shows the raw data, as well as the 1-,3- and 6-hourly mean values of the air temperature.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yildizanil/BlogScripts/master/blog1/blog1_fig1.png" alt="fig1" style="width:50%">
 </p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+The script used in this post can be found here: <a href="https://github.com/yildizanil/BlogScripts">Blog Scripts @ Github</a>
+
 
 </BODY>
 
