@@ -1,0 +1,167 @@
+	<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>2020-07-19</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="css/linearicons.css">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/magnific-popup.css">
+			<link rel="stylesheet" href="css/jquery-ui.css">				
+			<link rel="stylesheet" href="css/nice-select.css">							
+			<link rel="stylesheet" href="css/animate.min.css">
+			<link rel="stylesheet" href="css/owl.carousel.css">				
+			<link rel="stylesheet" href="css/main.css">
+		</head>
+		<body>	
+		  <header id="header">
+		    <div class="container main-menu">
+		    	<div class="row align-items-center justify-content-between d-flex">
+			      <div id="logo">
+			      </div>
+			      <nav id="nav-menu-container">
+			        <ul class="nav-menu">
+			          <li><a href="index.html">Home</a></li>
+			          <li><a href="research.html">Research</a></li>
+			              <li><a href="blog_main.html">Blog</a></li>
+                                   <li class="menu-has-children"><a href="">Publications</a>
+			            <ul>
+			              <li><a href="journal.html">Peer-reviewed journal papers</a></li>
+			              <li><a href="conference.html">Peer-reviewed conference proceedings</a></li>
+                                        <li><a href="chapters.html">Book chapters</a></li>
+                                        <li><a href="abstracts.html">Extended abstracts</a></li>
+                                        <li><a href="others.html">Other publications</a></li>
+			            </ul></li>				
+			          <li><a href="contact.html">Contact</a></li>
+			        </ul>
+			      </nav><!-- #nav-menu-container -->		    		
+		    	</div>
+		    </div>
+        </BODY>
+
+<BODY>
+<style>
+div.list{
+  height: 500px;
+  width: auto;}
+</style>
+<div  style="text-align:left;margin-top:50px;padding: 10px 10px 10px 10px;overflow:auto" class="list" >
+<H6>2020-07-19</H6>
+<h6 style="  padding: 5px 5px 5px 0px;">Temperature contour plots showing variation in depth and time</h6>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+When you are monitoring soil temperature at various locations in a plot or an in experimental setup over time, you either end up having too many figures in a publication or important information goes missing when you plot snapshots of soil temperature profile. While struggling with fitting all the data I have in a strictly 6-page conference proceeding, I came up with an idea of illustrating the change in time and depth of soil temperature in the same plot, without compromising any data. </p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+The idea starts with a simple contour plot. Temperature contour plots have a potential to convey a great deal of information you would like to give to the reader. A 2D temperature profile can be plotted very easily. While keeping the 2D structure, extending the profile by using the x-axis as time gives you a chance to show both the time- and depth- dependent variation. </p>
+
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+We will use air temperature and soil temperature data from the same lysimeter setup presented in the Blog <a href="blog1.html">Post #1</a>. If you are interested in watching how the setup was commissioned, please <a href="https://www.youtube.com/watch?v=e4RBqE6g_Jg&t">click here</a>. Data used in this script can be accessed via <a href="https://api.ngif.urbanobservatory.ac.uk/">NGIF API</a> and from the following data set:</p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+Yildiz, A. and Stirling, R.A. 2020. PLEXUS Lysimeter - Soil Temperature Data v1. Newcastle University. <a href="https://doi.org/10.25405/data.ncl.12613880">doi: 10.25405/data.ncl.12613880.</a>
+</p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+Firstly, we define the start and end of the time frame, then generate a POSIXct vector using <em>seq()</em> function in 15-min time steps:
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+startdate <- as.POSIXct("2019-05-03 00:00:00",tz="UTC")</code></p>
+<code style="color:black">
+enddate <- as.POSIXct("2019-07-03 00:00:00",tz="UTC")</code></p>
+<code style="color:black">
+time_steps <- seq(startdate,enddate,60*15)</code></p></div>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+Then, we check the range of the air temperature and soil temperature values measured, simply using <em>summary()</em> function. We see that air temperature varied between 2.5 °C and 25.7 °C, whereas the range of soil temperatures measured is 2.9 °C and 23.4°C. We define a sequential vector to obtain the steps of temperature between 2°C and 26°C so that we can display all the temperatures measured.
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+temp_steps <- seq(2,26,1)
+</code></p></div>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+We used <em>findInterval()</em> function in the Blog <a href="blog1.html">Post #1</a> to find which time step does each data point belong to. This time we will use the same function to define which temperature step each measurement belongs to. Next thing to do is to use the <em>heat.colors(n)</em> palette to get the hex colour codes. Here <em>n</em> will be the number of the colours we want to extract. We have 25 temperature steps, therefore we will substitute <em>n</em> with <em>length(temp_steps)</em>. We have one issue to solve here. The first colour in <em>heat.colors(n)</em> palette is red, whereas our first temperature step, <em>temp_steps[1]</em> , is 2°C-3°C. But, we should be having a bright red for our last temperature step, <em>temp_steps[25]</em>. Therefore, we will substract all temperature steps from 26 to assign the first colour in the palette to the last temperature step and vice versa. Finally, we combine <em>findInterval()</em> and <em>heat.colors()</em> to assign a hex colour code for each measurement. The final code will be as follows:
+ <div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">heat.colors(length(temp_steps))[(length(temp_steps)+1)-findInterval(soiltemp[,2],temp_steps)]
+</code></p></div>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+This piece of code will assign a hex colour code for each measurement in the second column of <em>soiltemp</em> dataset, and can be used to create any contour plot. We can repeat the same for the other columns in the dataset. In order to visualise the contour plot showing the variation in depth and time, we will first plot an empty area that extends in x-axis from our <em>startdate</em> until <em>enddate</em>. y-axis will range between 0 to the depth of our soil column, i.e. 950 mm for the lysimeter setup. We will extract the depths from the column names of the <em>soiltemp</em> dataset.
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+depth <- as.numeric(substr(colnames(soiltemp[2:14]),start=2,stop=4))
+</code></p></div>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+Then generate a for loop to plot rectangles with a width of the measurement interval of the soil temperature, and a height to be adjusted based on the plot height. The colour of the rectangle will be chosen using the combined <em>findInterval()</em> and <em>heat.colors()</em> code. So, the for loop will look like this: 
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+for(j in 1:length(depth))
+{
+   for(i in 1:nrow(soiltemp))
+   {
+   </code></p><code style="color:black">
+      rect(xleft=as.POSIXct(soiltemp[i,1],"UTC"),ybottom=depth[j]-20,xright=as.POSIXct(soiltemp[i+1,1],"UTC"),ytop=depth[j]+20,
+      </code></p><code style="color:black">
+           col=heat.colors(length(temp_steps))[(length(temp_steps)+1)-findInterval(soiltemp[i,j+1],temp_steps)],border=NA)
+  }
+}
+</code></p></div>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+The plot will then look like this:</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yildizanil/BlogScripts/master/blog2/blog2_fig1.png" alt="fig1" style="width:50%">
+</p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+The scripts used in this post can be found here: <a href="https://github.com/yildizanil/BlogScripts">Blog Scripts @ Github</a></p>
+
+</BODY>
+
+
+        <footer>
+<style>
+div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 0px;
+}
+</style>
+  <div align="center" class="fixed">
+This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+  </div>
+</footer>
+
+
+
+
+			<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="js/popper.min.js"></script>
+			<script src="js/vendor/bootstrap.min.js"></script>			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>			
+  			<script src="js/easing.min.js"></script>			
+			<script src="js/hoverIntent.js"></script>
+			<script src="js/superfish.min.js"></script>	
+			<script src="js/jquery.ajaxchimp.min.js"></script>
+			<script src="js/jquery.magnific-popup.min.js"></script>	
+    		<script src="js/jquery.tabs.min.js"></script>						
+			<script src="js/jquery.nice-select.min.js"></script>	
+            <script src="js/isotope.pkgd.min.js"></script>			
+			<script src="js/waypoints.min.js"></script>
+			<script src="js/jquery.counterup.min.js"></script>
+			<script src="js/simple-skillbar.js"></script>							
+			<script src="js/owl.carousel.min.js"></script>							
+			<script src="js/mail-script.js"></script>	
+			<script src="js/main.js"></script>	
+		</body>
+	</html> 
