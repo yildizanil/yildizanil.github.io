@@ -1,0 +1,179 @@
+	<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>2020-07-26</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="css/linearicons.css">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/magnific-popup.css">
+			<link rel="stylesheet" href="css/jquery-ui.css">				
+			<link rel="stylesheet" href="css/nice-select.css">							
+			<link rel="stylesheet" href="css/animate.min.css">
+			<link rel="stylesheet" href="css/owl.carousel.css">				
+			<link rel="stylesheet" href="css/main.css">
+		</head>
+		<body>	
+		  <header id="header">
+		    <div class="container main-menu">
+		    	<div class="row align-items-center justify-content-between d-flex">
+			      <div id="logo">
+			      </div>
+			      <nav id="nav-menu-container">
+			        <ul class="nav-menu">
+			          <li><a href="index.html">Home</a></li>
+			          <li><a href="research.html">Research</a></li>
+			              <li><a href="blog_main.html">Blog</a></li>
+                                   <li class="menu-has-children"><a href="">Publications</a>
+			            <ul>
+			              <li><a href="journal.html">Peer-reviewed journal papers</a></li>
+			              <li><a href="conference.html">Peer-reviewed conference proceedings</a></li>
+                                        <li><a href="chapters.html">Book chapters</a></li>
+                                        <li><a href="abstracts.html">Extended abstracts</a></li>
+                                        <li><a href="others.html">Other publications</a></li>
+			            </ul></li>				
+			          <li><a href="contact.html">Contact</a></li>
+			        </ul>
+			      </nav><!-- #nav-menu-container -->		    		
+		    	</div>
+		    </div>
+        </BODY>
+
+<BODY>
+<style>
+div.list{
+  height: 800px;
+  width: auto;}
+</style>
+<div  style="text-align:left;margin-top:50px;padding: 10px 10px 10px 10px;overflow:auto" class="list" >
+<H6>2020-07-26</H6>
+<h6 style="  padding: 5px 5px 5px 0px;">Complex panel plots in R</h6>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+There are many times that two axes are not enough to present all the information you want to convey to the readers. You end up having panel plots with multiple subfigures. Sometimes, these can be so complicated that you need to prepare the figures and merge them separately on Visio, Powerpoint etc. That was what I have been doing for my panel plots for a long time, but then I made the effort and put some time in understanding the <em> layout()</em> in R to eliminate my dependance on any other software to prepare complex panel plots.</p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+First of all, what does <em>layout()</em> function do? </p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+It divides the screen into panels that you can plot an individual figure. That said, let's look at the syntax and the arguments of the function:</p>
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+layout(matrix, widths,heights)</code></p></div>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+It requires a <em>matrix</em> defining which plot goes which panel, a vector describing the <em>widths</em> of the columns and a vector describing the <em>heights</em> of the column. Now, let's look at the final plot we want to achieve:</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yildizanil/BlogScripts/master/blog3/blog3_fig1.png" alt="fig1" style="width:25%">
+</p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+There are 8 subfigures, a legend and some common axes in the figure.The final plot size we want to have is 150 mm x 100 mm. Figures <em>1a</em>-<em>1d</em> have a width of 70 mm each, and a height of 25 mm. Figures <em>1e</em>-<em>1h</em> are 35 mm x 35 mm squares. We plot 5-mm gaps on the left and right side of the figures, so we can fit the common axis label there. Same thing is valid for the top and bottom. We will plot the legend on top, and a common axis label in between figures <em>1a</em>-<em>1d</em> and <em>1e</em>-<em>1h</em>, as well as below <em>1e</em>-<em>1h</em>.We use the following line of code to create the layout:</p>
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+layout(panel,heights=c(5,25,25,5,35,5),widths=c(5,35,35,35,35,5))
+</code></p></div>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+Here the argument <em>panel</em> is a matrix we defined to assign a plot. <em>Panel</em> will be a matrix consisting of 6 rows and 6 columns.</p>
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+panel <- matrix(NA,6,6)
+</code></p></div>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+We first assign the 70-mm wide time series plots (<em>1a-1d</em>) and the 35-mm wide frequency distribution plots (<em>1e-1h</em>) to the cells where we want to have them:</p>
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+panel[2,2:3] <- c(1,1)</p>
+panel[2,4:5] <- c(2,2)</p>
+panel[3,2:3] <- c(3,3)</p>
+panel[3,4:5] <- c(4,4)</p>
+</code></p></div>
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+panel[5,2:5] <- c(5,6,7,8)
+</code></p></div>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+We then assign the space for legend and common axis labels for the figures:</p>
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+panel[1,] <- rep(9,6)</p>
+panel[4,] <- rep(10,6)</p>
+panel[6,] <- rep(11,6)</p>
+</code></p></div>
+<div align="center" style="overflow:auto;padding: 0px 0px 0px 0px;border-width:2px;background-color: lightgray;border-color:black">
+<code style="color:black">
+panel[2:3,1] <- c(12,12)</p>
+panel[5,1] <- c(13)</p>
+panel[2:3,6] <- c(14,14)</p>
+panel[5,6] <- c(15)</p>
+</code></p></div>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+<em>Panel</em> matrix looks like the following then:</p>
+<table cellspacing="5" cellpadding="2" border="1" align="center">
+        <tr><td>9</td><td>9</td><td>9</td><td>9</td><td>9</td><td>9</td></tr>
+        <tr><td>12</td><td>1</td><td>1</td><td>2</td><td>2</td><td>14</td></tr>
+        <tr><td>12</td><td>3</td><td>3</td><td>4</td><td>4</td><td>14</td></tr>
+        <tr><td>10</td><td>10</td><td>10</td><td>10</td><td>10</td><td>10</td></tr>
+        <tr><td>13</td><td>5</td><td>6</td><td>7</td><td>8</td><td>15</td></tr>
+        <tr><td>11</td><td>11</td><td>11</td><td>11</td><td>11</td><td>11</td></tr>
+</table>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+where 1-4 are Figures <em>1a</em>-<em>1d</em>, 5-8 are Figures <em>1e</em>-<em>1h</em>,9 will be the legend, 10 and 11 will be the common x-axis labels. 12, 13, 14 and 15 will be used for common y-axis labels. The rest will be plotting each figure in the order of the numbers in the matrix. One of the most crucial things is to use the <b><em>pty="m"</em></b> argument in the <em>par()</em> function, so that the full plot area in each subfigure is used.</p>
+
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+As usual, the scripts used in this post can be found here: <a href="https://github.com/yildizanil/BlogScripts">Blog Scripts @ Github</a></p>
+
+</BODY>
+
+
+        <footer>
+<style>
+div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 0px;
+}
+</style>
+  <div align="center" class="fixed">
+This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+  </div>
+</footer>
+
+
+
+
+			<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="js/popper.min.js"></script>
+			<script src="js/vendor/bootstrap.min.js"></script>			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>			
+  			<script src="js/easing.min.js"></script>			
+			<script src="js/hoverIntent.js"></script>
+			<script src="js/superfish.min.js"></script>	
+			<script src="js/jquery.ajaxchimp.min.js"></script>
+			<script src="js/jquery.magnific-popup.min.js"></script>	
+    		<script src="js/jquery.tabs.min.js"></script>						
+			<script src="js/jquery.nice-select.min.js"></script>	
+            <script src="js/isotope.pkgd.min.js"></script>			
+			<script src="js/waypoints.min.js"></script>
+			<script src="js/jquery.counterup.min.js"></script>
+			<script src="js/simple-skillbar.js"></script>							
+			<script src="js/owl.carousel.min.js"></script>							
+			<script src="js/mail-script.js"></script>	
+			<script src="js/main.js"></script>	
+		</body>
+	</html> 
