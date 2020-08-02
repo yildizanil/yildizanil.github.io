@@ -1,0 +1,132 @@
+	<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>2020-08-02</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="css/linearicons.css">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/magnific-popup.css">
+			<link rel="stylesheet" href="css/jquery-ui.css">				
+			<link rel="stylesheet" href="css/nice-select.css">							
+			<link rel="stylesheet" href="css/animate.min.css">
+			<link rel="stylesheet" href="css/owl.carousel.css">				
+			<link rel="stylesheet" href="css/main.css">
+		</head>
+		<body>	
+		  <header id="header">
+		    <div class="container main-menu">
+		    	<div class="row align-items-center justify-content-between d-flex">
+			      <div id="logo">
+			      </div>
+			      <nav id="nav-menu-container">
+			        <ul class="nav-menu">
+			          <li><a href="index.html">Home</a></li>
+			          <li><a href="research.html">Research</a></li>
+			              <li><a href="blog_main.html">Blog</a></li>
+                                   <li class="menu-has-children"><a href="">Publications</a>
+			            <ul>
+			              <li><a href="journal.html">Peer-reviewed journal papers</a></li>
+			              <li><a href="conference.html">Peer-reviewed conference proceedings</a></li>
+                                        <li><a href="chapters.html">Book chapters</a></li>
+                                        <li><a href="abstracts.html">Extended abstracts</a></li>
+                                        <li><a href="others.html">Other publications</a></li>
+			            </ul></li>				
+			          <li><a href="contact.html">Contact</a></li>
+			        </ul>
+			      </nav><!-- #nav-menu-container -->		    		
+		    	</div>
+		    </div>
+        </BODY>
+
+<BODY>
+<style>
+div.list{
+  height: 800px;
+  width: auto;}
+</style>
+<div  style="text-align:left;margin-top:50px;padding: 10px 10px 10px 10px;overflow:auto" class="list" >
+<H6>2020-07-26</H6>
+<h6 style="  padding: 5px 5px 5px 0px;">Controlling external devices with data loggers</h6>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+<b><FONT color="#FF0000"> I must warn you that I am not a professional electrician. If you are unsure about whatever you are doing, please consult a professional. Before attempting to follow what has been suggested here, please read about <a href="https://www.hse.gov.uk/toolbox/electrical.htm">electrical safety</a> first. If you think there are any mistakes in this text, please contact me. 
+</FONT></b></p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+This week will be a break from coding, and will be on instrumentation, in particular controlling an external device with data loggers. You might have the need to control an external device, an alarm, sampler, camera, modem, heater, fan etc., either in the laboratory or in the field while monitoring the changes in your setup. The example I will give will be using a heating element to activate when the temperature drops below a threshold and to deactivate when the temperature is above the threshold. Campbell Scientific data loggers are used in many applications worldwide, and we use a CR1000x in our laboratory to measure various parameters mostly in student projects.</p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+CR1000x, and many other data loggers, has control ports that can be set as low (0 VDC) or high (generally 5 VDC), but they have limited drive capacity to run an external device (<a href="https://s.campbellsci.com/documents/us/manuals/cr1000x-product-manual.pdf">Campbell, 2020</a>). So, therefore you need an external relay-driven circuit to run your device. Relay, in very simple terms, is like a switch. When the control port is set "high", the relay activates the rest of the circuit.</p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+The first thing we need is a solid-state relay. We have chosen a <a href="https://uk.rs-online.com/web/p/solid-state-relays/2912545/?relevancy-data=636F3D3126696E3D4931384E53656172636847656E65726963266C753D656E266D6D3D6D61746368616C6C7061727469616C26706D3D5E2E2A2426706F3D31333326736E3D592673723D2673743D43415443485F414C4C5F44454641554C542673633D592677633D4E4F4E45267573743D637279646F6D206431643037267374613D637279646F6D20643164303726&searchHistory=%7B%22enabled%22%3Atrue%7D">Crydom D1D07</a> for this example. There are two things you need to check. The first is the range of control voltage of your relay. When the control port is set to high, a 5 VDC is applied. Therefore, the range of the relay should cover this. The model we have chosen has a range between 3.5 to 32 VDC. Therefore, we the first criteria is met. The second thing to check is the maximum load voltage and current. This is decided based on the requirement of the device that we want to run. For example, we can have an <a href="https://uk.rs-online.com/web/p/enclosure-heaters/4152931/">enclosure heater</a>, with a supply voltage of 12 VDC and an output power of 20 W. This gives us a current value of 1.67 amps. The relay we have chosen has a maximum load voltage of 100V and a current of 7 amps. So, this criteria has also been met.  </p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+We see that the relay has 4 connections, 2 for output and 2 for input. What we need to do to complete the circuit is the following (also illustrated in the figure):
+<ul>
+  <li> Connect the live cable from the power supply to the port 1 of the relay</li>
+   <li> Connect the neutral cable from the power supply to the neutral of the device</li>
+  <li> Connect the live cable from the device to the port 2 of the relay</li>
+  <li> Connect the ground of the data logger to the port 3 of the relay</li>
+  <li> Connect one of the control ports, i.e. C1-C4, on the data logger to the port 4 of the relay</li>
+</ul>
+The connections are now finished. We need to add a control sequence to the program of the data logger now using a simple if-else algorithm.</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yildizanil/BlogScripts/master/blog4/circuit.png" alt="fig1" style="width:30%">
+</p>
+<p align="justify" style="overflow:auto;padding: 0px 0px 0px 0px">
+
+</BODY>
+
+
+        <footer>
+<style>
+div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 0px;
+}
+</style>
+  <div align="center" class="fixed">
+This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+  </div>
+</footer>
+
+
+
+
+			<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="js/popper.min.js"></script>
+			<script src="js/vendor/bootstrap.min.js"></script>			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>			
+  			<script src="js/easing.min.js"></script>			
+			<script src="js/hoverIntent.js"></script>
+			<script src="js/superfish.min.js"></script>	
+			<script src="js/jquery.ajaxchimp.min.js"></script>
+			<script src="js/jquery.magnific-popup.min.js"></script>	
+    		<script src="js/jquery.tabs.min.js"></script>						
+			<script src="js/jquery.nice-select.min.js"></script>	
+            <script src="js/isotope.pkgd.min.js"></script>			
+			<script src="js/waypoints.min.js"></script>
+			<script src="js/jquery.counterup.min.js"></script>
+			<script src="js/simple-skillbar.js"></script>							
+			<script src="js/owl.carousel.min.js"></script>							
+			<script src="js/mail-script.js"></script>	
+			<script src="js/main.js"></script>	
+		</body>
+	</html> 
