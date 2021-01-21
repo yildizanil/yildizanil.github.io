@@ -604,6 +604,30 @@ summary {
 </div>
 <div id="emulating-impact-area" class="section level2">
 <h2>Emulating impact area</h2>
+<p>Three emulators for impact area have been built for Bondo.</p>
+<div id="building-the-emulator" class="section level3">
+<h3>Building the emulator</h3>
+<pre class="r"><code>library(RobustGaSP)
+library(raster)
+
+source(&quot;Scripts/Functions/LHS.R&quot;)
+source(&quot;Scripts/Functions/CALC_IA.R&quot;)
+source(&quot;Scripts/Functions/EMULATE_IA.R&quot;)
+
+bondo_input_50 &lt;- lhs_r.avaflow(50,3,c(100,2200,0.02,0.3,1.5,4.5))
+bondo_input_100 &lt;- lhs_r.avaflow(100,3,c(100,2200,0.02,0.3,1.5,4.5))
+bondo_input_200 &lt;- lhs_r.avaflow(200,3,c(100,2200,0.02,0.3,1.5,4.5))
+
+bondo_ia_50 &lt;- calc_ia(&quot;bondo&quot;,50,&quot;height&quot;,0.1,25)
+bondo_ia_100 &lt;- calc_ia(&quot;bondo&quot;,100,&quot;height&quot;,0.1,25)
+bondo_ia_200 &lt;- calc_ia(&quot;bondo&quot;,200,&quot;height&quot;,0.1,25)
+
+emulate_50 &lt;- rgasp(bondo_input_50,bondo_ia_50[,1])
+emulate_100 &lt;- rgasp(bondo_input_100,bondo_ia_100[,1])
+emulate_200 &lt;- rgasp(bondo_input_200,bondo_ia_200[,1])</code></pre>
+</div>
+<div id="cross-validating-the-emulator-leave-one-out" class="section level3">
+<h3>Cross-validating the emulator: Leave-one-out</h3>
 <pre class="r"><code>emulate_ia &lt;- function(case,numberofsim,parameter,threshold,cellsize)
 {
    require(RobustGaSP)
@@ -625,7 +649,7 @@ summary {
    colnames(pred) &lt;- c(&quot;pred.mean&quot;,&quot;pred.sd&quot;)
    return(pred)
 }</code></pre>
-<p>Here is an example of cross-validating an emulator for Bondo built with 50 simulations.</p>
+<p>Here is an example an emulator built with 50 simulations from Bondo. Cross-validation was performed using leave-one-out method.</p>
 <pre class="r"><code>emulate_ia(&quot;bondo&quot;,50,&quot;height&quot;,0.1,25)</code></pre>
 <p>Here is a summary of the predictions:</p>
 <pre><code>##    pred.mean        pred.sd        
@@ -635,6 +659,56 @@ summary {
 ##  Mean   :2.918   Mean   :0.021268  
 ##  3rd Qu.:3.034   3rd Qu.:0.026051  
 ##  Max.   :3.198   Max.   :0.087045</code></pre>
+</div>
+<div id="cross-validating-the-emulator-k-fold" class="section level3">
+<h3>Cross-validating the emulator: k-fold</h3>
+<pre class="r"><code>kfold_ia &lt;- function(case,numberofsim,kfold,ntimes)
+{
+   require(caret)
+   require(RobustGaSP)
+   
+   source(&quot;Scripts/Functions/LHS.R&quot;)
+   source(&quot;Scripts/Functions/CALC_IA.R&quot;)
+   range_select &lt;- function(case_select)
+   {
+      switch(case_select,bondo=c(100,2200,0.02,0.3,1.5,4.5),
+             acheron=c(100,2200,0.02,0.3,3.2,9.6),
+             frank=c(50,500,0.08,0.7,18,54))
+   }
+   input &lt;- lhs_r.avaflow(numberofsim,3,range_select(case))
+   output &lt;- calc_ia(case,numberofsim,&quot;height&quot;,0.1,25)
+   
+   mae &lt;- matrix(NA,kfold,ntimes)
+   rmse &lt;- matrix(NA,kfold,ntimes)
+   r2 &lt;- matrix(NA,kfold,ntimes)
+   
+   for(j in 1:ntimes)
+   {
+      set.seed(666+(j-1))
+      
+      for(i in 1:kfold)
+      {
+         index_valid &lt;- createFolds(output[,1],k=kfold,list=T,returnTrain=F)[[i]]
+         index_train &lt;- c(1:length(output[,1]))[-index_valid]
+         
+         model &lt;- rgasp(design=input[index_train,],response=output[index_train,1],lower_bound=F)
+         
+         model.valid &lt;- predict.rgasp(model,input[index_valid,])
+         y.measured &lt;- output[index_valid,1] 
+         y.estimated &lt;- model.valid$mean
+         
+         mae[i,j] &lt;- MAE(y.estimated,y.measured,na.rm = T)
+         rmse[i,j] &lt;- RMSE(y.estimated,y.measured,na.rm = T)
+         r2[i,j] &lt;- R2(y.estimated,y.measured,na.rm = T)
+         rm(list=c(&quot;y.measured&quot;,&quot;y.estimated&quot;,&quot;model&quot;,&quot;model.valid&quot;,&quot;index_valid&quot;,&quot;index_train&quot;))
+      }
+   }
+   metric &lt;- matrix(NA,nrow=ntimes,ncol=3)
+   metric &lt;- cbind(colMeans(mae),colMeans(rmse),colMeans(r2))
+   colnames(metric) &lt;- c(&quot;mae&quot;,&quot;rmse&quot;,&quot;r2&quot;)
+   return(metric)
+}</code></pre>
+</div>
 </div>
 </div>
 
