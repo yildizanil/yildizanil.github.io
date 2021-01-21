@@ -473,8 +473,6 @@ summary {
    mapedit[,1] &lt;- as.character(mapedit[,1])
    mapedit[,2] &lt;- paste0(&quot;r.mapcalc --overwrite expression=&quot;,&quot;sim&quot;,c(1:numberofsim),&quot;_rel=&quot;,para_sim[,3],&quot;*input_rel&quot;)
    
-   
-   
    cat(start_grass,file=paste0(case,&quot;_&quot;,numberofsim,&quot;_&quot;,cellsize,&quot;.r.avaflow.sh&quot;),
        sep=&quot;\n&quot;)
    cat(ele_import,file=paste0(case,&quot;_&quot;,numberofsim,&quot;_&quot;,cellsize,&quot;.r.avaflow.sh&quot;),
@@ -500,9 +498,7 @@ summary {
          
          if(unit %in% c(&quot;sec&quot;,&quot;min&quot;,&quot;hour&quot;))
          {
-            divide_unit &lt;- function(divide){switch(divide,sec=1,
-                                                   min=60,
-                                                   hour=(60*60))}
+            divide_unit &lt;- function(divide){switch(divide,sec=1,min=60,hour=(60*60))}
             
             data &lt;- matrix(NA,nrow=numberofsim,ncol=1)
             for(n in 1:numberofsim)
@@ -562,7 +558,7 @@ summary {
 <div id="calculating-impact-area" class="section level2">
 <h2>Calculating impact area</h2>
 <p>There are various methods to calculate the impact area of the simulations. One can obtain this value using maximum flow height, flow kinetic energy, flow velocity or flow pressure. The following code calculates the impact area based on the user’s selection of parameter.</p>
-<pre class="r"><code>calc_ia &lt;- function(case,numberofsim,para,threshold,cellsize)
+<pre class="r"><code>calc_ia &lt;- function(case,numberofsim,para,threshold=0,cellsize)
 {
    require(raster)
    if(case %in% c(&quot;bondo&quot;,&quot;acheron&quot;,&quot;frank&quot;))
@@ -606,11 +602,39 @@ summary {
    } 
 }</code></pre>
 </div>
-<div id="bondo---50-simulations" class="section level2">
-<h2>Bondo - 50 simulations</h2>
-<p>Here is an example of generating 50 random samples using 3 parameters with pre-define ranges.</p>
-<pre class="r"><code>#lhs_r.avaflow(50,3,c(100,2200,0.02,0.3,1.5,4.5))</code></pre>
-<p>Here is a summary of the parameters generated:</p>
+<div id="emulating-impact-area" class="section level2">
+<h2>Emulating impact area</h2>
+<pre class="r"><code>emulate_ia &lt;- function(case,numberofsim,parameter,threshold,cellsize)
+{
+   require(RobustGaSP)
+   
+   source(&quot;Scripts/Functions/LHS.R&quot;)
+   source(&quot;Scripts/Functions/CALC_IA.R&quot;)
+   
+   range_select &lt;- function(case_select)
+   {
+      switch(case_select,bondo=c(100,2200,0.02,0.3,1.5,4.5),
+             acheron=c(100,2200,0.02,0.3,3.2,9.6),
+             frank=c(50,500,0.08,0.7,18,54))
+   }
+   input &lt;- lhs_r.avaflow(numberofsim,3,range_select(case))
+   output &lt;- calc_ia(case,numberofsim,parameter,threshold,cellsize)
+   emulate_ia &lt;- rgasp(input,output[,1])
+   pred_ia &lt;- leave_one_out_rgasp(emulate_ia)
+   pred &lt;- as.data.frame(cbind(pred_ia$mean,pred_ia$sd))
+   colnames(pred) &lt;- c(&quot;pred.mean&quot;,&quot;pred.sd&quot;)
+   return(pred)
+}</code></pre>
+<p>Here is an example of cross-validating an emulator for Bondo built with 50 simulations.</p>
+<pre class="r"><code>emulate_ia(&quot;bondo&quot;,50,&quot;height&quot;,0.1,25)</code></pre>
+<p>Here is a summary of the predictions:</p>
+<pre><code>##    pred.mean        pred.sd        
+##  Min.   :2.538   Min.   :0.005558  
+##  1st Qu.:2.809   1st Qu.:0.010839  
+##  Median :2.950   Median :0.016479  
+##  Mean   :2.918   Mean   :0.021268  
+##  3rd Qu.:3.034   3rd Qu.:0.026051  
+##  Max.   :3.198   Max.   :0.087045</code></pre>
 </div>
 </div>
 
