@@ -710,6 +710,51 @@ emulate_200 &lt;- rgasp(bondo_input_200,bondo_ia_200[,1])</code></pre>
 }</code></pre>
 </div>
 </div>
+<div id="emulating-flow-height" class="section level2">
+<h2>Emulating flow height</h2>
+<pre class="r"><code>emulate_vec &lt;- function(case,numberofsim,para,threshold,cellsize)
+{
+   require(raster)
+   require(RobustGaSP)
+   source(&quot;Scripts/Functions/LHS.R&quot;)
+   range_select &lt;- function(case_select)
+   {
+      switch(case_select,bondo=c(100,2200,0.02,0.3,1.5,4.5),
+             acheron=c(100,2200,0.02,0.3,3.2,9.6),
+             frank=c(50,500,0.08,0.7,18,54))
+   }
+   para_select &lt;- function(para)
+   {switch(para,height=&quot;hflow_max&quot;,
+           energy=&quot;tflow_max&quot;,
+           pressure=&quot;pflow_max&quot;,
+           velocity=&quot;vflow_max&quot;)}
+   
+   input &lt;- lhs_print(numberofsim,3,range_select(case))
+   loc &lt;- paste0(numberofsim,&quot;sims_&quot;,case,&quot;/sim&quot;,1,&quot;_results/sim&quot;,1,&quot;_ascii/&quot;)
+   elev &lt;- raster(paste0(loc,&quot;sim&quot;,1,&quot;_elev.asc&quot;))
+   data &lt;- as.data.frame(matrix(NA,nrow=numberofsim,ncol=dim(elev)[1]*dim(elev)[2]))
+   
+   for(n in 1:nrow(data))
+   {
+      loc &lt;- paste0(numberofsim,&quot;sims_&quot;,case,&quot;/sim&quot;,n,&quot;_results/sim&quot;,n,&quot;_ascii/&quot;)
+      imported &lt;- raster(paste0(loc,&quot;sim&quot;,n,&quot;_&quot;,para_select(para),&quot;.asc&quot;))
+      data[n,] &lt;- as.vector(t(as.matrix(imported)))
+      rm(list=&quot;imported&quot;)
+   }
+   
+   remove &lt;- NA
+   for(j in 1:ncol(data))
+   {
+      remove[j] &lt;- length(which(data[,j]&lt;threshold))
+   }
+   
+   output &lt;- data[,-which(remove==numberofsim)]
+   index &lt;- which(remove!=numberofsim)
+   
+   emulator &lt;- ppgasp(input,output,optimization= &#39;nelder-mead&#39;)
+   return(emulator)
+}</code></pre>
+</div>
 </div>
 
 
