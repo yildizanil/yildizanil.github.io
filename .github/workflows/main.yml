@@ -17,27 +17,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-         # --- Check Quarto ---
-      - name: Check if Quarto is installed
-        run: |
-          if quarto --version >/dev/null 2>&1; then
-            echo "QUARTO_EXISTS=true" >> $GITHUB_ENV
-          else
-            echo "QUARTO_EXISTS=false" >> $GITHUB_ENV
-          fi
-
-      # --- Check micromamba ---
-      - name: Check if micromamba is installed
-        run: |
-          if micromamba --version >/dev/null 2>&1; then
-            echo "MICROMAMBA_EXISTS=true" >> $GITHUB_ENV
-          else
-            echo "MICROMAMBA_EXISTS=false" >> $GITHUB_ENV
-          fi
-
       # Install micromamba (optional environment file, channels, etc., can be specified if desired)
       - name: Install micromamba
-        if: env.MICROMAMBA_EXISTS == 'false'
         uses: mamba-org/setup-micromamba@v2
         with:
           environment-file: environment.yml
@@ -45,7 +26,6 @@ jobs:
 
       # Install Quarto
       - name: Install Quarto
-        if: env.QUARTO_EXISTS == 'false'
         uses: quarto-dev/quarto-actions/setup@v2
 
       # Render the Quarto project
