@@ -1,0 +1,189 @@
+[
+  {
+    "objectID": "docs/00_tutorial.html",
+    "href": "docs/00_tutorial.html",
+    "title": "Milestone 1",
+    "section": "",
+    "text": "This is jupyter notebook with some python code and markdown text. These can also be included directly into a quarto website.",
+    "crumbs": [
+      "Documentation",
+      "Milestone 1"
+    ]
+  },
+  {
+    "objectID": "docs/00_tutorial.html#import-libraries",
+    "href": "docs/00_tutorial.html#import-libraries",
+    "title": "Milestone 1",
+    "section": "Import Libraries",
+    "text": "Import Libraries\n\nimport matplotlib.pyplot as plt\nimport numpy as np",
+    "crumbs": [
+      "Documentation",
+      "Milestone 1"
+    ]
+  },
+  {
+    "objectID": "docs/00_tutorial.html#make-plots",
+    "href": "docs/00_tutorial.html#make-plots",
+    "title": "Milestone 1",
+    "section": "Make Plots",
+    "text": "Make Plots\nWe shall now make a simple plot. Note that by using the quarto option #| code-fold: true , we can hide the code that is used to make the plot and allow it to be expanded as shown below.\n\n\nCode\nimport matplotlib.pyplot as plt\nimport numpy as np\nx = np.linspace(0, 2, 100)  # Sample data.\n\nplt.figure()\nplt.plot(x, x, label='linear')  # Plot some data on the (implicit) axes.\nplt.plot(x, x**2, label='quadratic')  # etc.\nplt.plot(x, x**3, label='cubic')\nplt.xlabel('x')\nplt.ylabel('y')\nplt.title(\"Simple Plot\")\nplt.legend()\nplt.show()",
+    "crumbs": [
+      "Documentation",
+      "Milestone 1"
+    ]
+  },
+  {
+    "objectID": "presentation/presentation.html#style-of-figures",
+    "href": "presentation/presentation.html#style-of-figures",
+    "title": "Automatic model discovery using symbolic regression (I/II)",
+    "section": "Style of figures",
+    "text": "Style of figures\nCan be changed in the matplotlibstyle.py file."
+  },
+  {
+    "objectID": "presentation/presentation.html#embed-a-figure-from-a-notebook",
+    "href": "presentation/presentation.html#embed-a-figure-from-a-notebook",
+    "title": "Automatic model discovery using symbolic regression (I/II)",
+    "section": "Embed a figure from a notebook",
+    "text": "Embed a figure from a notebook\n\n\n\n\n\n\n\n\n\n\nFigure 1: Caption"
+  },
+  {
+    "objectID": "presentation/presentation.html#embed-output-from-a-notebook",
+    "href": "presentation/presentation.html#embed-output-from-a-notebook",
+    "title": "Automatic model discovery using symbolic regression (I/II)",
+    "section": "Embed output from a notebook",
+    "text": "Embed output from a notebook\n\n\n\n\nTest output"
+  },
+  {
+    "objectID": "presentation/presentation.html#embed-existing-figures",
+    "href": "presentation/presentation.html#embed-existing-figures",
+    "title": "Automatic model discovery using symbolic regression (I/II)",
+    "section": "Embed existing figures",
+    "text": "Embed existing figures"
+  },
+  {
+    "objectID": "presentation/presentation.html#columns",
+    "href": "presentation/presentation.html#columns",
+    "title": "Automatic model discovery using symbolic regression (I/II)",
+    "section": "Columns",
+    "text": "Columns\n\n\nODE: \\[\n\\begin{align*}\n\\begin{pmatrix}\n\\dot{w} \\\\ \\dot{d}\n\\end{pmatrix}\n=\n\\begin{pmatrix}\nw(\\alpha - \\beta d) \\\\ d(-\\delta + \\gamma w)\n\\end{pmatrix}\n\\end{align*}\n\\]\n\n\nwolves: \\(w\\), deer: \\(d\\)\nparameters: \\(P=(\\alpha, \\beta, \\gamma, \\delta)\\)\ninitial condition: \\(w^0\\), \\(d^0\\)"
+  },
+  {
+    "objectID": "presentation/presentation.html#tex",
+    "href": "presentation/presentation.html#tex",
+    "title": "Automatic model discovery using symbolic regression (I/II)",
+    "section": "Tex",
+    "text": "Tex\n\\[\\begin{align*}\n\\text{discrete states } & \\mathbf{U} =\n\\begin{bmatrix}\n  \\begin{pmatrix}\n  w^0 \\\\ d^0\n  \\end{pmatrix},\n  \\begin{pmatrix}\n  w^1 \\\\ d^1\n  \\end{pmatrix},\n  \\dots,\n  \\begin{pmatrix}\n  w^N \\\\ d^N\n  \\end{pmatrix}\n\\end{bmatrix}\n\\in \\mathbb{R}^{2(N+1)}\n\\\\\n\\text{additional data }& \\mathbf{Q} =\n\\begin{bmatrix}\n  \\begin{pmatrix}\n  dt^0\n  \\end{pmatrix},\n  \\begin{pmatrix}\n  dt^1\n  \\end{pmatrix},\n  \\dots,\n  \\begin{pmatrix}\n  dt^{N-1}\n  \\end{pmatrix}\n\\end{bmatrix}\n\\in \\mathbb{R}^{N}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "presentation/presentation.html#annotate-code",
+    "href": "presentation/presentation.html#annotate-code",
+    "title": "Automatic model discovery using symbolic regression (I/II)",
+    "section": "Annotate code",
+    "text": "Annotate code\nThe &lt;1&gt; allows you tag lines to reference later\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n1x = np.linspace(0,1,100)\n2plt.plot(x,x)\n\n\n1\n\ngenerate data\n\n2\n\nplot"
+  },
+  {
+    "objectID": "presentation/presentation.html#compute-directly-in-the-presentation",
+    "href": "presentation/presentation.html#compute-directly-in-the-presentation",
+    "title": "Automatic model discovery using symbolic regression (I/II)",
+    "section": "Compute directly in the presentation",
+    "text": "Compute directly in the presentation\nThe directives\n#| echo: false\n#| eval: true\nenables you to commend out the input/output"
+  },
+  {
+    "objectID": "presentation/presentation.html#declare-commands-hide-content",
+    "href": "presentation/presentation.html#declare-commands-hide-content",
+    "title": "Automatic model discovery using symbolic regression (I/II)",
+    "section": "Declare commands / Hide content",
+    "text": "Declare commands / Hide content\nUsing\n::: hidden\n$$\n\\DeclareMathOperator*{\\argmin}{arg\\,min}\n$$\n:::\nwe can define a latex operator if needed.\n\n\\[\n\\DeclareMathOperator*{\\argmin}{arg\\,min}\n\\]\n\n\\[\\begin{align*}\n  & \\hat{\\mathbf{\\xi}} = \\argmin_{\\mathbf{\\xi}} || \\mathbf{U}_t - \\mathbf{\\Theta}(\\mathbf{U}, \\mathbf{Q}) \\xi ||^2_2 + \\epsilon \\; \\kappa \\left( \\mathbf{\\Theta}(\\mathbf{U}, \\mathbf{Q})  \\right) ||\\mathbf{\\xi}||_0 \\\\\n  & \\epsilon : \\text{regularization parameter} \\\\\n  & \\kappa :  \\text{condition number of } \\mathbf{\\Theta} \\\\\n  & ||\\mathbf{\\xi}||_0 : \\text{penalty to discourage overfitting}\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "presentation/presentation.html#lists",
+    "href": "presentation/presentation.html#lists",
+    "title": "Automatic model discovery using symbolic regression (I/II)",
+    "section": "Lists",
+    "text": "Lists\nMy suggestion:\n\nSINDy: some examples (simple to complex)\n\nODE problem\nPDE problem\nbuilding complex candidate libraries\nnoisy data\nsparse data\n\n\nAre you interested in:\n\nSINDy: control problem?\nPySR: explain a neural net?"
+  },
+  {
+    "objectID": "presentation/presentation.html#references",
+    "href": "presentation/presentation.html#references",
+    "title": "Automatic model discovery using symbolic regression (I/II)",
+    "section": "References",
+    "text": "References\n\nRudy et al. (2017)\nYe and Guo (2023)\n\n\n\n\n\nRudy, S.H., Brunton, S.L., Proctor, J.L., Kutz, J.N., 2017. Data-driven discovery of partial differential equations. Science Advances 3, e1602614. https://doi.org/10.1126/sciadv.1602614\n\n\nYe, D., Guo, M., 2023. Gaussian process learning of nonlinear dynamics."
+  },
+  {
+    "objectID": "orga/kickoff.html",
+    "href": "orga/kickoff.html",
+    "title": "2025-04-24: Kick-off",
+    "section": "",
+    "text": "We discussed:\n\nResearch idea of combining SuDS with GSHP\nAY shared resources\nWeekly working hours"
+  },
+  {
+    "objectID": "orga/meetings.html",
+    "href": "orga/meetings.html",
+    "title": "Meetings between EB and AY",
+    "section": "",
+    "text": "Kick-Off Meeting: 2025-04-24\nMeeting 1: 2025-05-13"
+  },
+  {
+    "objectID": "orga/meetings.html#dates",
+    "href": "orga/meetings.html#dates",
+    "title": "Meetings between EB and AY",
+    "section": "",
+    "text": "Kick-Off Meeting: 2025-04-24\nMeeting 1: 2025-05-13"
+  },
+  {
+    "objectID": "orga/meeting1.html",
+    "href": "orga/meeting1.html",
+    "title": "2025-05-13: Meeting 1",
+    "section": "",
+    "text": "We discussed:\n\nMotivation behind modeling of the thermo-hydrological behaviour\n\nimprove GHE Design Decisions\nimprove thermal conductivity -&gt; more efficient heat transfer -&gt; less circulations needed\nless circulation -&gt; less pump work (less energy consumption) -&gt; higher efficiency\nalso reduced size of the system -&gt; less (expensive) area needed (shallow GHE)\n\nPossible research directions:\n\natmospheric and rainfall models/predicitons are publicly available\nwe can use these models to and make predictions about long-term behaviour of the GHE\nGHE are usually build for long time frames (~30 years?) -&gt; this way we can take climate change into account\nanother idea: deep GHE can be used as mechanically stabilizing the soil (?)\nfurther coupling the MPINN with mechanical behaviour\nanother idea: GSHP circulation calculations?\nanother idea: looking at the thermodynamical cycle of the GSHP\n\nNext Steps:\n\nGo through PINN Tutorial (online tutorial, MBD lecture slides)\nhttps://mbd_lectures.pages.rwth-aachen.de/cf4dt/content/exercises/exercise_assignment_7.html\nset up easy problem (heat equation?) to get a hang on PINNs\nset up PINN for water infiltration\nset up PINN for thermal behaviour\nthen coupling (MPINN)\n\nFurther Info:\n\nadd papers you read to bibligraphy"
+  },
+  {
+    "objectID": "presentation/sample_notebook.html",
+    "href": "presentation/sample_notebook.html",
+    "title": "Run a solver and plot data",
+    "section": "",
+    "text": "The beauty is that we can simply switch the style to generate the right plot for the occasion!\n# import matplotlib\n# styles can be found here https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html\n# print(matplotlib.style.available)\nimport matplotlib.pyplot as plt\nimport sample_code as code\n# plt.style.use('seaborn-v0_8-talk')\nfrom matplotlibstyle import *\n\nfig, ax = plt.subplots(2, constrained_layout=True)\nx, y = code.solver()\ncode.plot(ax[0], x, y, label='sin(x)')\ncode.plot(ax[0], x, 2*y, label='2*sin(x)')\ncode.plot(ax[1], x, 3*y, label='3*sin(x)')\nax[0].legend()\nax[1].legend()\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Caption"
+  },
+  {
+    "objectID": "presentation/sample_notebook.html#generate-cell-output",
+    "href": "presentation/sample_notebook.html#generate-cell-output",
+    "title": "Run a solver and plot data",
+    "section": "Generate cell output",
+    "text": "Generate cell output\nYou need to tag the cell below in order to reference it in the presentation.\n\nprint('Test output')\n\nTest output"
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "Eike Bergen - Multi-physics Informed Neural Networks",
+    "section": "Abstract",
+    "text": "Abstract\nBoth Green Infrastructure and Ground Source Heat Exchangers provide opportunities to significantly improve the resilience and sustainability of our built environment. Potential of utilising green infrastructure as a medium for ground heat exchange has been investigated by Yildiz and Stirling (2022) by conducting heat injection tests in a heavily-instrumented bespoke field setup. In order to upscale these findings to many different green infrastructure components with various ground source heat pump configurations, advanced simulation techniques can be utilised. Multiphysics-Informed Neural Networks (Wang et al. (2023)) provide a great opportunity here."
+  },
+  {
+    "objectID": "index.html#study-material",
+    "href": "index.html#study-material",
+    "title": "Eike Bergen - Multi-physics Informed Neural Networks",
+    "section": "Study material",
+    "text": "Study material\n\nSeungchul Lee - Physics-informed Neural Networks, accessed on 2025-05-14"
+  },
+  {
+    "objectID": "index.html#data-products",
+    "href": "index.html#data-products",
+    "title": "Eike Bergen - Multi-physics Informed Neural Networks",
+    "section": "Data products",
+    "text": "Data products\n\nYildiz, Anil; Stirling, Ross (2022). PLEXUS@NGIF - Heat Injection Tests. figshare. Collection. doi: 10.6084/m9.figshare.c.5312786.v1\nYildiz, Anil; Stirling, Ross (2020). PLEXUS @ NGIF - Field and laboratory measurements. Newcastle University. Collection. doi: 10.25405/data.ncl.c.5088419.v1"
+  },
+  {
+    "objectID": "index.html#getting-started",
+    "href": "index.html#getting-started",
+    "title": "Eike Bergen - Multi-physics Informed Neural Networks",
+    "section": "Getting started",
+    "text": "Getting started\nHave a look at our wiki."
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Eike Bergen - Multi-physics Informed Neural Networks",
+    "section": "References",
+    "text": "References\n\n\nBandai, T., Ghezzehei, T.A., 2021. Physics‐informed neural networks with monotonicity constraints for richardson‐richards equation: Estimation of constitutive relationships and soil water flux density from volumetric water content measurements. Water Resources Research 57. https://doi.org/10.1029/2020wr027642\n\n\nNg, C.W.W., Zhou, Q., Zhang, Q., 2025. A novel surrogate model for hydro-mechanical coupling in unsaturated soil with incomplete physical constraints. Computers and Geotechnics 180, 107091. https://doi.org/10.1016/j.compgeo.2025.107091\n\n\nWang, Y., Shi, L., Hu, X., Song, W., Wang, L., 2023. Multiphysics‐informed neural networks for coupled soil hydrothermal modeling. Water Resources Research 59. https://doi.org/10.1029/2022wr031960\n\n\nYildiz, A., Stirling, R.A., 2022. Ground heat exchange potential of green infrastructure. Geothermics 101, 102351. https://doi.org/10.1016/j.geothermics.2022.102351\n\n\nYildiz, A., Stirling, R.A., 2021. Thermo-hydrological behaviour of green infrastructure: A comparative field and laboratory study. Geomechanics for Energy and the Environment 25, 100219. https://doi.org/10.1016/j.gete.2020.100219"
+  }
+]
