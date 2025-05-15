@@ -18,17 +18,23 @@ website:
     logo: "images/logo_mbd.png"
     logo-href: /index.qmd
     left:
+      - text: "Home"
+        file: index.qmd
       - text: "Publications"
         file: publications.qmd
+      - text: "CV"
+        file: cv.qmd
+      - text: "Contact"
+        file: contact.qmd
     right:
       - icon: globe
-        href: https://www.mbd.rwth-aachen.de
+        href: https://www.anilyildiz.info
       - icon: github
         href: https://github.com/yildizanil
       - icon: gitlab
-        href: https://git.rwth-aachen.de/mbd
+        href: https://git.rwth-aachen.de/anilyildiz
       - icon: linkedin
-        href: https://www.linkedin.com/company/rwth-mbd
+        href: https://www.linkedin.com/in/anilyildiz-
 
   sidebar:
     - id: documentation
