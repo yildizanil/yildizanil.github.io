@@ -1,0 +1,71 @@
+project:
+  type: website
+  output-dir: _html
+
+execute:
+  freeze: true
+
+bibliography: bibliography.bib
+csl: elsevier-harvard.csl
+
+website:
+  favicon: "images/logo_mbd.png"
+  search: 
+    location: navbar
+    type: overlay
+  navbar:
+    title: false
+    logo: "images/logo_mbd.png"
+    logo-href: /index.qmd
+    left:
+      - text: "Meetings"
+        file: orga/meetings.qmd
+      - text: "Documentation"
+        file: docs/00_tutorial.ipynb
+      - text: "Presentation"
+        file: _presentation/presentation.html
+        target: "_blank"
+      - text: "Wiki"
+        file: wiki/index.qmd
+    right:
+      - icon: globe
+        href: https://www.mbd.rwth-aachen.de
+      - icon: github
+        href: https://github.com/mbd-rwth
+      - icon: gitlab
+        href: https://git.rwth-aachen.de/mbd
+      - icon: linkedin
+        href: https://www.linkedin.com/company/rwth-mbd
+
+  sidebar:
+    - id: documentation
+      title: "Documentation"
+      contents:
+        - docs/00_tutorial.ipynb
+    - id: wiki
+      title: "Wiki"
+      contents:
+        - wiki/index.qmd
+
+  page-footer:
+    background: dark
+    border: true
+    center: "Contact : [**Anil Yildiz**](mailto:yildiz@mbd.rwth-aachen.de)"
+    right: "[![](/images/logo_mbd.png){width=200px fig-alt=MBD  }](https://www.mbd.rwth-aachen.de)" 
+
+  repo-url: https://git.rwth-aachen.de/mbd/quarto_project_template/
+  repo-actions: none
+  repo-branch: main
+  repo-link-target: "_blank"
+
+format:
+  html:
+    theme:
+      light: sandstone
+      dark: cyborg
+    css: styles.css
+    toc: true
+    code-block-bg: true
+    code-copy: true
+
+    

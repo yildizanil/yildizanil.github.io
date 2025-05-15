@@ -1,0 +1,34 @@
+---
+title: "2025-05-13: Meeting 1"
+---
+
+We discussed:
+
+- Motivation behind modeling of the thermo-hydrological behaviour
+    - improve GHE Design Decisions
+    - improve thermal conductivity -> more efficient heat transfer -> less circulations needed
+    - less circulation -> less pump work (less energy consumption) -> higher efficiency
+    - also reduced size of the system -> less (expensive) area needed (shallow GHE)
+
+- Possible research directions:
+    - atmospheric and rainfall models/predicitons are publicly available
+    - we can use these models to and make predictions about long-term behaviour of the GHE
+    - GHE are usually build for long time frames (~30 years?) -> this way we can take climate change into account
+
+    - another idea: deep GHE can be used as mechanically stabilizing the soil (?)
+    - further coupling the MPINN with mechanical behaviour
+
+    - another idea: GSHP circulation calculations?
+    - another idea: looking at the thermodynamical cycle of the GSHP
+
+- Next Steps:
+    - Go through PINN Tutorial (online tutorial, MBD lecture slides)
+    - https://mbd_lectures.pages.rwth-aachen.de/cf4dt/content/exercises/exercise_assignment_7.html
+    - set up easy problem (heat equation?) to get a hang on PINNs
+    - set up PINN for water infiltration
+    - set up PINN for thermal behaviour
+    - then coupling (MPINN)
+
+
+- Further Info:
+    - add papers you read to bibligraphy

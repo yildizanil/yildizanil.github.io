@@ -1,0 +1,17 @@
+---
+title: "Meetings between EB and AY"
+from: markdown+emoji
+sidebar: false
+format: 
+  html:
+    page-layout: full
+    link-external-icon: true
+    link-external-newwindow: true
+---
+
+## Dates
+
+- [Kick-Off Meeting: 2025-04-24](./kickoff.qmd)
+- [Meeting 1: 2025-05-13](./meeting1.qmd)
+
+
