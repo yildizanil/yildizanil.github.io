@@ -1,5 +1,4 @@
 ---
-title: "Eike Bergen - Multi-physics Informed Neural Networks"
 nocite: |
   @*
 notebook-links: false
@@ -14,18 +13,6 @@ format:
 
 ![](/images/banner_suds.png){fig-align="center" width="4in"}
 
-## Abstract
-
-Both Green Infrastructure and Ground Source Heat Exchangers provide opportunities to significantly improve the resilience and sustainability of our built environment. Potential of utilising green infrastructure as a medium for ground heat exchange has been investigated by @Yildiz2022 by conducting heat injection tests in a heavily-instrumented bespoke field setup. In order to upscale these findings to many different green infrastructure components with various ground source heat pump configurations, advanced simulation techniques can be utilised. Multiphysics-Informed Neural Networks (@Wang2023) provide a great opportunity here.
-
-## Study material
-
-- [Seungchul Lee - Physics-informed Neural Networks](https://i-systems.github.io/tutorial/KSNVE/220525/01_PINN.html), accessed on 2025-05-14
-
-## Data products
-
-- Yildiz, Anil; Stirling, Ross (2022). PLEXUS@NGIF - Heat Injection Tests. figshare. Collection. doi: [10.6084/m9.figshare.c.5312786.v1](https://doi.org/10.6084/m9.figshare.c.5312786.v1)
-- Yildiz, Anil; Stirling, Ross (2020). PLEXUS @ NGIF - Field and laboratory measurements. Newcastle University. Collection. doi: [10.25405/data.ncl.c.5088419.v1](https://doi.org/10.25405/data.ncl.c.5088419.v1)
 
 ## Getting started
 
