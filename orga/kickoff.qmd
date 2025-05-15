@@ -1,9 +1,0 @@
----
-title: "2025-04-24: Kick-off"
----
-
-We discussed:
-
-- Research idea of combining SuDS with GSHP
-- AY shared resources
-- Weekly working hours

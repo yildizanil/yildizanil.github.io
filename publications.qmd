@@ -1,5 +1,8 @@
 ---
-title: "Meetings between EB and AY"
+title: "Publications"
+nocite: |
+  @*
+notebook-links: false
 from: markdown+emoji
 sidebar: false
 format: 
@@ -9,9 +12,5 @@ format:
     link-external-newwindow: true
 ---
 
-## Dates
-
-- [Kick-Off Meeting: 2025-04-24](./kickoff.qmd)
-- [Meeting 1: 2025-05-13](./meeting1.qmd)
-
-
+::: {#refs}
+:::

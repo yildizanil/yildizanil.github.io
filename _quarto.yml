@@ -18,20 +18,13 @@ website:
     logo: "images/logo_mbd.png"
     logo-href: /index.qmd
     left:
-      - text: "Meetings"
-        file: orga/meetings.qmd
-      - text: "Documentation"
-        file: docs/00_tutorial.ipynb
-      - text: "Presentation"
-        file: _presentation/presentation.html
-        target: "_blank"
-      - text: "Wiki"
-        file: wiki/index.qmd
+      - text: "Publications"
+        file: publications.qmd
     right:
       - icon: globe
         href: https://www.mbd.rwth-aachen.de
       - icon: github
-        href: https://github.com/mbd-rwth
+        href: https://github.com/yildizanil
       - icon: gitlab
         href: https://git.rwth-aachen.de/mbd
       - icon: linkedin
