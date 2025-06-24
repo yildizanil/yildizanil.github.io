@@ -12,63 +12,34 @@ format:
 
 ## Work experience
 
-- Lecturer and Deputy Director
-
-Methods for Model-based Development in Computational Engineering, RWTH Aachen University 
-
+- Lecturer and Deputy Director \
+Methods for Model-based Development in Computational Engineering, RWTH Aachen University \ 
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 03.2024 - Present ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Aachen, Germany
 
-- Postdoctoral researcher
-
-Methods for Model-based Development in Computational Engineering, RWTH Aachen University 
-
+- Postdoctoral researcher \
+Methods for Model-based Development in Computational Engineering, RWTH Aachen University \
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 10.2021 - 03.2024 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Aachen, Germany
 
-- Postdoctoral researcher
-
-Computational Geoscience, University of Göttingen
-
+- Postdoctoral researcher \
+Computational Geoscience, University of Göttingen \
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 11.2020 - 10.2021 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Göttingen, Germany
 
-- Postdoctoral researcher
-
-National Green Infrastructure Facility + School of Engineering, Newcastle University
-
+- Postdoctoral researcher \
+National Green Infrastructure Facility + School of Engineering, Newcastle University \
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 01.2019 - 11.2020 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Newcastle upon Tyne, United Kingdom
 
-- Postdoctoral researcher
-
-Institute for Geotechnical Engineering, ETH Zurich
-
+- Postdoctoral researcher \
+Institute for Geotechnical Engineering, ETH Zurich \
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 10.2018 - 01.2019 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Zurich, Switzerland
 
-- Scientific assistant
-
-Institute for Geotechnical Engineering, ETH Zurich
-
+- Scientific assistant \
+Institute for Geotechnical Engineering, ETH Zurich \
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 06.2017 - 10.2018 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Zurich, Switzerland
 
-- PhD Student
-
-WSL Institute for Snow and Avalanche Research SLF
-
+- PhD Student \
+WSL Institute for Snow and Avalanche Research SLF \
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 06.2013 - 06.2017 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Zurich, Switzerland
 
-- Teaching assistant
-
-Department of Civil Engineering, Bogazici University
-
+- Teaching assistant \
+Department of Civil Engineering, Bogazici University \
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 06.2013 - 06.2017 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Istanbul, Turkey
-
-
-
-
-
-
-since 2021	Postdoctoral researcher, Methods for Model-based Development in Compuational Engineering, RWTH Aachen University, Germany
-2020 - 2021	Postdoctoral researcher, Computational Geoscience, University of Göttingen, Germany
-2019 - 2020	Postdoctoral researcher, School of Engineering, Newcastle University, United Kingdom
-2018 - 2019	Postdoctoral researcher, Institute for Geotechnical Engineering, ETH Zurich, Switzerland
-2017 - 2018	Scientific assistant, Institute for Geotechnical Engineering, ETH Zurich, Switzerland
-2013 - 2017	PhD Student, WSL Institute for Snow and Avalanche Research SLF, Switzerland
-2011 - 2013	Teaching assistant, Department of Civil Engineering, Bogazici University, Turkey
