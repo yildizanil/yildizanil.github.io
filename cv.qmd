@@ -13,7 +13,7 @@ format:
 ## Work experience
 
 - Lecturer and Deputy Director \
-Methods for Model-based Development in Computational Engineering, RWTH Aachen University \ 
+Methods for Model-based Development in Computational Engineering, RWTH Aachen University \
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 03.2024 - Present ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Aachen, Germany
 
 - Postdoctoral researcher \
@@ -42,4 +42,18 @@ WSL Institute for Snow and Avalanche Research SLF \
 
 - Teaching assistant \
 Department of Civil Engineering, Bogazici University \
-![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 06.2013 - 06.2017 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Istanbul, Turkey
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 06.2013 - 06.2017 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Istanbul, Turkiye
+
+## Education
+
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 2018 \
+![](https://icons.getbootstrap.com/assets/icons/mortarboard.svg) Dr.sc. in Civil Engineering \
+ETH Zurich, Switzerland
+
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 2013 \
+![](https://icons.getbootstrap.com/assets/icons/mortarboard.svg) M.Sc. in Civil Engineering \
+Bogazici University, Turkiye
+
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 2010 \
+![](https://icons.getbootstrap.com/assets/icons/mortarboard.svg) B.Sc. in Civil Engineering \
+Bogazici University, Turkiye
