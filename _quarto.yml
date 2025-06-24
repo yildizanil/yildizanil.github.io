@@ -10,6 +10,7 @@ csl: elsevier-harvard.csl
 
 website:
   favicon: "images/logo_mbd.png"
+  site-url: "https://www.anilyildiz.info"
   search: 
     location: navbar
     type: overlay
@@ -20,6 +21,8 @@ website:
     left:
       - text: "Home"
         file: index.qmd
+      - text: "Software"
+        file: software.qmd
       - text: "Publications"
         file: publications.qmd
       - text: "CV"
@@ -52,8 +55,8 @@ website:
     center: "Contact : [**Anil Yildiz**](mailto:yildiz@mbd.rwth-aachen.de)"
     right: "[![](/images/logo_mbd.png){width=200px fig-alt=MBD  }](https://www.mbd.rwth-aachen.de)" 
 
-  repo-url: https://git.rwth-aachen.de/mbd/quarto_project_template/
-  repo-actions: none
+  repo-url: https://www.github.com/anilyildiz.github.io
+  repo-actions: [issue]
   repo-branch: main
   repo-link-target: "_blank"
 

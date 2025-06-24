@@ -1,0 +1,17 @@
+---
+title: "pyrootmemo"
+notebook-links: false
+from: markdown+emoji
+sidebar: false
+format: 
+  html:
+    page-layout: full
+    link-external-icon: true
+    link-external-newwindow: true
+---
+
+My colleague Gerrit J. Meijer and I developed this project to help users to estimate contribution of roots to the shear strength of soil using various models. The documentation is structured to provide a comprehensive guide to using the library, including installation, quickstart, theoretical background, and detailed explanations of the available models. pyrootmemo is designed using Object-Oriented Programming (OOP) principles, making it easy to extend and customize for your specific needs.
+
+- Visit our github repo to see further details: [github.com/rootmemo/pyrootmemo](https://github.com/rootmemo/pyrootmemo)
+- Read the documentation on [pyrootmemo.readthedocs.io](https://pyrootmemo.readthedocs.io/latest/)
+- Do you want to contribute? See our [Contribution guidelines](https://pyrootmemo.readthedocs.io/latest/contribute.html)
