@@ -12,48 +12,61 @@ format:
 
 ## Work experience
 
-- Lecturer and Deputy Director \
-Methods for Model-based Development in Computational Engineering, RWTH Aachen University \
-![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 03.2024 - Present ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Aachen, Germany
+::: {layout-ncol=3}
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 03.2024 - Present \
+![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Aachen, Germany \
+![](https://icons.getbootstrap.com/assets/icons/person-vcard.svg) **Lecturer and Deputy Director** \
+![](https://icons.getbootstrap.com/assets/icons/building.svg) Methods for Model-based Development in Computational Engineering, RWTH Aachen University
 
-- Postdoctoral researcher \
-Methods for Model-based Development in Computational Engineering, RWTH Aachen University \
-![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 10.2021 - 03.2024 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Aachen, Germany
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 10.2021 - 03.2024 \
+![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Aachen, Germany \
+![](https://icons.getbootstrap.com/assets/icons/person-vcard.svg) **Postdoctoral researcher** \
+![](https://icons.getbootstrap.com/assets/icons/building.svg) Methods for Model-based Development in Computational Engineering, RWTH Aachen University \
 
-- Postdoctoral researcher \
-Computational Geoscience, University of Göttingen \
-![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 11.2020 - 10.2021 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Göttingen, Germany
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 11.2020 - 10.2021 \
+![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Göttingen, Germany \
+![](https://icons.getbootstrap.com/assets/icons/person-vcard.svg) **Postdoctoral researcher** \
+![](https://icons.getbootstrap.com/assets/icons/building.svg) Computational Geoscience, University of Göttingen \
 
-- Postdoctoral researcher \
-National Green Infrastructure Facility + School of Engineering, Newcastle University \
-![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 01.2019 - 11.2020 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Newcastle upon Tyne, United Kingdom
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 01.2019 - 11.2020 \
+![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Newcastle upon Tyne, United Kingdom \
+![](https://icons.getbootstrap.com/assets/icons/person-vcard.svg) **Postdoctoral researcher** \
+![](https://icons.getbootstrap.com/assets/icons/building.svg) National Green Infrastructure Facility + School of Engineering, Newcastle University \
 
-- Postdoctoral researcher \
-Institute for Geotechnical Engineering, ETH Zurich \
-![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 10.2018 - 01.2019 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Zurich, Switzerland
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 10.2018 - 01.2019 \
+![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Zurich, Switzerland \
+![](https://icons.getbootstrap.com/assets/icons/person-vcard.svg) **Postdoctoral researcher** \
+![](https://icons.getbootstrap.com/assets/icons/building.svg) Institute for Geotechnical Engineering, ETH Zurich \
 
-- Scientific assistant \
-Institute for Geotechnical Engineering, ETH Zurich \
-![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 06.2017 - 10.2018 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Zurich, Switzerland
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 06.2017 - 10.2018 \
+![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Zurich, Switzerland \
+![](https://icons.getbootstrap.com/assets/icons/person-vcard.svg) **Scientific assistant** \
+![](https://icons.getbootstrap.com/assets/icons/building.svg) Institute for Geotechnical Engineering, ETH Zurich \
 
-- PhD Student \
-WSL Institute for Snow and Avalanche Research SLF \
-![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 06.2013 - 06.2017 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Zurich, Switzerland
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 06.2013 - 06.2017 \
+![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Zurich, Switzerland \
+![](https://icons.getbootstrap.com/assets/icons/person-vcard.svg) **PhD Student** \
+![](https://icons.getbootstrap.com/assets/icons/building.svg) WSL Institute for Snow and Avalanche Research SLF \
 
-- Teaching assistant \
-Department of Civil Engineering, Bogazici University \
-![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 06.2013 - 06.2017 ![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Istanbul, Turkiye
+![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 02.2011 - 04.2013 \
+![](https://icons.getbootstrap.com/assets/icons/geo-alt.svg) Istanbul, Turkiye \
+![](https://icons.getbootstrap.com/assets/icons/person-vcard.svg) **Teaching assistant** \
+![](https://icons.getbootstrap.com/assets/icons/building.svg) Department of Civil Engineering, Bogazici University \
+
+:::
 
 ## Education
 
+::: {layout-ncol=3}
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 2018 \
 ![](https://icons.getbootstrap.com/assets/icons/mortarboard.svg) Dr.sc. in Civil Engineering \
-ETH Zurich, Switzerland
+![](https://icons.getbootstrap.com/assets/icons/building.svg) ETH Zurich, Switzerland
 
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 2013 \
 ![](https://icons.getbootstrap.com/assets/icons/mortarboard.svg) M.Sc. in Civil Engineering \
-Bogazici University, Turkiye
+![](https://icons.getbootstrap.com/assets/icons/building.svg) Bogazici University, Turkiye
 
 ![](https://icons.getbootstrap.com/assets/icons/calendar3.svg) 2010 \
 ![](https://icons.getbootstrap.com/assets/icons/mortarboard.svg) B.Sc. in Civil Engineering \
-Bogazici University, Turkiye
+![](https://icons.getbootstrap.com/assets/icons/building.svg) Bogazici University, Turkiye
+:::
