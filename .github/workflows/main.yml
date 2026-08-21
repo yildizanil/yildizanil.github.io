@@ -42,3 +42,4 @@ jobs:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _html   # or _book, depending on your Quarto output
           publish_branch: gh-pages
+          cname: anilyildiz.info
